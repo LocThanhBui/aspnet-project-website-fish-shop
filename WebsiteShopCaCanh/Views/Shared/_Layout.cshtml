@@ -1,0 +1,167 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="max-age=604800" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Shop Ca Canh - Đồ Án ASP2</title>
+    <link href="~/Content/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!-- jQuery -->
+    <script src="~/Content/js/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <!-- Bootstrap4 files-->
+    <script src="~/Content/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <!-- Font awesome 5 -->
+    <link href="~/Content/fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
+    <!-- custom style -->
+    <link href="~/Content/css/ui.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/responsive.css" rel="stylesheet" type="text/css" />
+    <!-- custom javascript -->
+    <script src="~/Content/js/script.js" type="text/javascript"></script>
+</head>
+<body>
+    <header class="section-header">
+        <section class="header-main border-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-2 col-lg-3 col-md-12">
+                        <a href="@Url.Action("Index", "Home")" class="brand-wrap">
+                            <img class="logo" src="~/Content/images/logo.png">
+                        </a> <!-- brand-wrap.// -->
+                    </div>
+                    <div class="col-xl-6 col-lg-5 col-md-6">
+
+                    </div> <!-- col.// -->
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="widgets-wrap float-md-right">
+                            <div class="widget-header mr-3">
+                                <a href="#" class="widget-view">
+                                    <div class="icon-area">
+                                        <i class="fa fa-user"></i>
+                                        <span class="notify">3</span>
+                                    </div>
+                                    @if (Session["idUser"] != null)
+                                    {
+                                        <a href="~/Home/Logout">Thoát</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Home/Login">Đăng nhập</a>
+
+                                    }
+                           
+                                </a>
+                            </div>
+                            <div class="widget-header mr-3">
+                                <a href="#" class="widget-view">
+                                    <div class="icon-area">
+                                        <i class="fa fa-comment-dots"></i>
+                                        <span class="notify">1</span>
+                                    </div>
+                                    <small class="text"> Tin nhắn </small>
+                                </a>
+                            </div>
+                            <div class="widget-header mr-3">
+                                <a href="@Url.Action("ShoppingCart", "ShoppingCart")" class="widget-view">
+                                    <div class="icon-area">
+                                        <span class="notify" id="CartCount">@Session["count"]</span>
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </div>
+                                    <small class="text"> Giỏ hàng </small>
+                                </a>
+                            </div>
+                        </div> <!-- widgets-wrap.// -->
+                    </div> <!-- col.// -->
+                </div> <!-- row.// -->
+            </div> <!-- container.// -->
+        </section> <!-- header-main .// -->
+
+        <nav class="navbar navbar-main navbar-expand-lg border-bottom">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main_nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Home")">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Liên hệ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Giới thiệu</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-md-auto">
+                      
+                    </ul>
+                </div> <!-- collapse .// -->
+            </div> <!-- container .// -->
+        </nav>
+    </header> <!-- section-header.// -->
+
+    @RenderBody()
+
+    <footer class="section-footer bg-secondary">
+        <div class="container">
+            <section class="footer-top padding-y-lg text-white">
+                <div class="row">
+                    <aside class="col-md col-6">
+                        <h6 class="title">Thương hiệu</h6>
+                        <ul class="list-unstyled">
+                            <li> <a href="#">Cá cảnh & Thức ăn cá cảnh</a></li>
+                            <li> <a href="#">WEEK AQUA</a></li>
+                            <li> <a href="#">NETLEA NANO</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-md col-6">
+                        <h6 class="title">Công ty</h6>
+                        <ul class="list-unstyled">
+                            <li> <a href="#">Liên Hệ</a></li>
+                            <li> <a href="#">Vị trí cửa hàng</a></li>
+                            <li> <a href="#">Sitemap</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-md col-6">
+                        <h6 class="title">Giúp đỡ</h6>
+                        <ul class="list-unstyled">
+                            <li> <a href="#">Liên hệ với chúng tôi</a></li>
+                            <li> <a href="#">Hoàn tiền</a></li>
+                            <li> <a href="#">Đặt hàng</a></li>
+                            <li> <a href="#">Thông tin vận chuyển</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-md col-6">
+                        <h6 class="title">Tài khoản</h6>
+                        <ul class="list-unstyled">
+                            <li> <a href="#"> Đăng nhập </a></li>
+                            <li> <a href="#"> Đăng ký </a></li>
+                            <li> <a href="#"> Thông tin tài khoản </a></li>
+                            <li> <a href="#"> Thông tin đặt hàng </a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-md">
+                        <h6 class="title">Mạng xã hội</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#"> <i class="fab fa-facebook"></i> Facebook </a></li>
+                            <li><a href="#"> <i class="fab fa-twitter"></i> Twitter </a></li>
+                            <li><a href="#"> <i class="fab fa-instagram"></i> Instagram </a></li>
+                            <li><a href="#"> <i class="fab fa-youtube"></i> Youtube </a></li>
+                        </ul>
+                    </aside>
+                </div> <!-- row.// -->
+            </section>	<!-- footer-top.// -->
+            <section class="footer-bottom text-center">
+
+                <p class="text-white">Website Shop Cá Cảnh & Phụ kiện cá cảnh </p>
+                <p class="text-muted"> &copy 2021 Đồ án ASP2-BÙI THANH LỘC-19003568, All rights reserved </p>
+                <br>
+            </section>
+        </div><!-- //container -->
+    </footer>
+    <!-- ========================= FOOTER END // ========================= -->
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+</body>
+</html>
